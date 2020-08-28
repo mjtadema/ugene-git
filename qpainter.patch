@@ -1,0 +1,25 @@
+diff --git a/src/corelibs/U2View/src/ov_sequence/Overview.cpp b/src/corelibs/U2View/src/ov_sequence/Overview.cpp
+index f31214d6b5..5be54b279c 100644
+--- a/src/corelibs/U2View/src/ov_sequence/Overview.cpp
++++ b/src/corelibs/U2View/src/ov_sequence/Overview.cpp
+@@ -23,6 +23,7 @@
+ 
+ #include <QToolTip>
+ #include <QVBoxLayout>
++#include <QPainterPath>
+ 
+ #include <U2Core/AnnotationModification.h>
+ #include <U2Core/AnnotationSettings.h>
+diff --git a/src/corelibs/U2View/src/ov_sequence/view_rendering/SequenceViewAnnotatedRenderer.cpp b/src/corelibs/U2View/src/ov_sequence/view_rendering/SequenceViewAnnotatedRenderer.cpp
+index 2d60b13d04..bdf6b576b8 100644
+--- a/src/corelibs/U2View/src/ov_sequence/view_rendering/SequenceViewAnnotatedRenderer.cpp
++++ b/src/corelibs/U2View/src/ov_sequence/view_rendering/SequenceViewAnnotatedRenderer.cpp
+@@ -21,6 +21,8 @@
+ 
+ #include "SequenceViewAnnotatedRenderer.h"
+ 
++#include <QPainterPath>
++
+ #include <U2Core/AnnotationSettings.h>
+ #include <U2Core/AnnotationTableObject.h>
+ #include <U2Core/AppContext.h>

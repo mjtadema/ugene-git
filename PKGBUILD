@@ -1,6 +1,6 @@
 # Maintainer: Jens Staal <staal1978@gmail.com>
 pkgname=ugene-git
-pkgver=1.32.0.r547.ge8c3bd3ed
+pkgver=33.0.r1278.g66df81b73e
 pkgrel=1
 pkgdesc="A free cross-platform genome analysis suite."
 arch=('x86_64')
@@ -10,8 +10,10 @@ depends=('libxtst' 'glu' 'qt5-webkit' 'qt5-websockets' 'qt5-svg' 'qt5-script' 'd
 provides=('ugene' 'ugene-bin')
 conflicts=('ugene' 'ugene-bin')
 replaces=('ugene' 'ugene-bin')
-source=('ugene::git+https://github.com/ugeneunipro/ugene.git')
-sha256sums=('SKIP')
+source=('ugene::git+https://github.com/ugeneunipro/ugene.git'
+        'qpainter.patch')
+sha256sums=('SKIP'
+            'fef4529c776102017d33ce98378f0f7bebb4b25f2a343c392fe27dfcc8e3e9e9')
 
 build() {
   cd "${srcdir}"/ugene
@@ -19,6 +21,11 @@ build() {
   git checkout master
   qmake CONFIG+=x64 PREFIX=/usr -r
   make
+}
+
+prepare() {
+    cd "${srcdir}"/ugene
+    patch --forward --strip=1 --input="${srcdir}/qpainter.patch"
 }
 
 pkgver() {
