@@ -1,4 +1,5 @@
-# Maintainer: Jens Staal <staal1978@gmail.com>
+# Original Maintainer: Jens Staal <staal1978@gmail.com>
+# Maintainer Matthijs Tadema
 pkgname=ugene-git
 pkgver=33.0.r1278.g66df81b73e
 pkgrel=1
